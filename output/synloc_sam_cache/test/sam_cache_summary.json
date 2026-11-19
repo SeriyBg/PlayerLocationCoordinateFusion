@@ -1,0 +1,34 @@
+{
+  "split": "test",
+  "sam_model": "mobile_sam.pt",
+  "sam_device": "mps",
+  "canonical_yolo_cache_root": "output/synloc_yolo_cache",
+  "canonical_yolo_model": "models/yolo26n_fullhd/yolo26n_fullhd-2/weights/best.pt",
+  "canonical_yolo_settings": {
+    "imgsz": 1280,
+    "conf": 0.05,
+    "iou": 0.7,
+    "max_det": 300
+  },
+  "processed_this_run": 9309,
+  "skipped_existing": 0,
+  "total_frozen_yolo_detections": 209054,
+  "total_valid_sam_masks": 209050,
+  "total_missing_sam_masks": 4,
+  "images_with_sam_count_mismatch": 0,
+  "alignment_guarantee": "bboxes and detection_scores are copied verbatim from the canonical YOLO cache; masks[i] belongs to canonical YOLO detection i. mask_valid[i] indicates whether SAM produced a non-empty mask.",
+  "cache_arrays": [
+    "image_id",
+    "file_name",
+    "actual_width",
+    "actual_height",
+    "annotation_width",
+    "annotation_height",
+    "bboxes",
+    "detection_scores",
+    "masks",
+    "mask_valid",
+    "source_yolo_cache"
+  ],
+  "mask_format": "Full-resolution uint8 binary masks. Shape = (N,H,W). Invalid/missing masks are all zeros."
+}

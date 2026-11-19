@@ -1,0 +1,96 @@
+{
+  "split": "val",
+  "ground_point_mode": "size_adaptive_sam_y",
+  "height_threshold_px": 90.0,
+  "height_reference": "source-image bbox height, not annotation pixels",
+  "rule": "SAM bottom-band X + bbox-bottom Y when height < threshold; SAM bottom-band X + SAM bottom-percentile Y when height >= threshold; bbox bottom-center fallback when SAM unavailable",
+  "bottom_band_frac": 0.05,
+  "bottom_y_percentile": 98.0,
+  "score_threshold": 0.4302865565,
+  "images": 6777,
+  "detections": 141924,
+  "annotation_file": "data/spiideo/annotations/val.json",
+  "yolo_cache_root": "output/synloc_yolo_cache",
+  "sam_cache_root": "output/synloc_sam_cache",
+  "bbox": {
+    "results_file": "output/synloc_sam_size_adaptive_eval/val/band0.05_p98/yolo_bbox_results.json",
+    "locsim": {
+      "mAP_LocSim_50_95": 0.5012757915459799,
+      "score_threshold": 0.4302865565,
+      "frame_accuracy_LocSim_50": 0.19300575475874282
+    },
+    "baseline_style": {
+      "distance_threshold_m": 0.25,
+      "detected": 56941,
+      "missed": 52410,
+      "extra": 47624,
+      "precision": 0.5445512360732558,
+      "recall": 0.5207176889100237,
+      "mean_matched_localization_error_m": 0.16173491850560925
+    },
+    "ground_point_sources": {
+      "bbox_center_bbox_bottom": 141924
+    }
+  },
+  "hybrid_a": {
+    "results_file": "output/synloc_sam_size_adaptive_eval/val/band0.05_p98/yolo_sam_hybrid_a_results.json",
+    "locsim": {
+      "mAP_LocSim_50_95": 0.5627036263330816,
+      "score_threshold": 0.4302865565,
+      "frame_accuracy_LocSim_50": 0.19403866017411833
+    },
+    "baseline_style": {
+      "distance_threshold_m": 0.25,
+      "detected": 63148,
+      "missed": 46203,
+      "extra": 41417,
+      "precision": 0.6039114426433319,
+      "recall": 0.5774798584375086,
+      "mean_matched_localization_error_m": 0.14987336219162153
+    },
+    "ground_point_sources": {
+      "sam_x_bbox_bottom": 141915,
+      "bbox_fallback_empty_mask": 5,
+      "bbox_fallback_no_mask": 4
+    }
+  },
+  "adaptive": {
+    "results_file": "output/synloc_sam_size_adaptive_eval/val/band0.05_p98/height_90px/yolo_sam_size_adaptive_results.json",
+    "locsim": {
+      "mAP_LocSim_50_95": 0.5702984758159654,
+      "score_threshold": 0.4302865565,
+      "frame_accuracy_LocSim_50": 0.19418621809060055
+    },
+    "baseline_style": {
+      "distance_threshold_m": 0.25,
+      "detected": 63559,
+      "missed": 45792,
+      "extra": 41006,
+      "precision": 0.6078420121455554,
+      "recall": 0.5812383974540699,
+      "mean_matched_localization_error_m": 0.14783389302572345
+    },
+    "ground_point_sources": {
+      "sam_x_bbox_bottom": 138359,
+      "sam_x_sam_y": 3556,
+      "bbox_fallback_empty_mask": 5,
+      "bbox_fallback_no_mask": 4
+    }
+  },
+  "delta_vs_bbox": {
+    "mAP_LocSim_50_95": 0.06902268426998548,
+    "frame_accuracy_LocSim_50": 0.0011804633318577284,
+    "precision_0_25m": 0.0632907760722996,
+    "recall_0_25m": 0.06052070854404623,
+    "detected_0_25m": 6618,
+    "mean_matched_error_0_25m": -0.013901025479885809
+  },
+  "delta_vs_hybrid_a": {
+    "mAP_LocSim_50_95": 0.007594849482883803,
+    "frame_accuracy_LocSim_50": 0.00014755791648221606,
+    "precision_0_25m": 0.003930569502223591,
+    "recall_0_25m": 0.003758539016561313,
+    "detected_0_25m": 411,
+    "mean_matched_error_0_25m": -0.002039469165898089
+  }
+}

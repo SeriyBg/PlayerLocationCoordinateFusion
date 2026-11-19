@@ -1,0 +1,35 @@
+{
+  "split": "val",
+  "pose_model": "halpe26_m",
+  "pose_schema": "halpe26",
+  "keypoint_confidence_threshold": 0.3,
+  "minimum_detection_score": 0.43,
+  "bbox_gt_match_iou_threshold": 0.3,
+  "better_margin_m": 0.0,
+  "correct_threshold_m": 0.25,
+  "counts": {
+    "better": 47673,
+    "method_only_correct": 17980,
+    "both_correct": 37848,
+    "both_wrong": 26759,
+    "worse": 44658,
+    "bbox_only_correct": 20269,
+    "equal": 10525,
+    "unmatched_detection": 1717
+  },
+  "pose_ground_source_counts": {
+    "both_feet": 78594,
+    "right_foot": 13546,
+    "bbox_fallback": 11350,
+    "left_foot": 612,
+    "both_ankles": 170,
+    "left_ankle": 198,
+    "right_ankle": 103
+  },
+  "mean_bbox_error_m": 0.2942280606203292,
+  "mean_pose_error_m": 0.3997310616167975,
+  "mean_improvement_m_bbox_minus_pose": -0.10550300099646832,
+  "positive_improvement_means": "pose is more accurate than bbox",
+  "csv": "output/synloc_pose_debug/val/halpe26_m/pose_detection_debug.csv",
+  "images": "output/synloc_pose_debug/val/halpe26_m/images"
+}

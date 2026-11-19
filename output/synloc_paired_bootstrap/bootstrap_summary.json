@@ -1,0 +1,130 @@
+{
+  "methodology": {
+    "dataset": "Spiideo SoccerNet SynLoc validation",
+    "annotation": "data/spiideo/annotations/val.json",
+    "points_cache": "output/synloc_sam_size_adaptive_eval/val/band0.05_p98/extracted_sam_points.npz",
+    "n_images": 6777,
+    "cached_detections": 141924,
+    "sampling": {
+      "strategy": "image_exploratory",
+      "group_field": null,
+      "n_sampling_groups": 6777,
+      "group_size_min": 1,
+      "group_size_median": 1,
+      "group_size_max": 1,
+      "interpretation": "Image-level paired resampling because trustworthy grouping identifiers were unavailable. Within-sequence correlation is not modeled."
+    },
+    "n_iterations": 1000,
+    "seed": 42,
+    "ci_method": "percentile_2.5_97.5",
+    "same_sample_used_for_all_methods": true,
+    "resampled_repeated_images_counted_separately": true,
+    "score_threshold": 0.4302865565,
+    "official_eval": {
+      "evaluator": "sskit.coco.LocSimCOCOeval",
+      "iou_type": "bbox",
+      "sigmas": [
+        0.089,
+        0.089
+      ],
+      "use_area": true,
+      "useSegm": null,
+      "position_from_keypoint_index": 1,
+      "cached_ap_optimization": "official COCOeval accumulate on area=all and maxDet=100; verified against full official score and independent repeated-image official subset"
+    },
+    "validated_original_scores": {
+      "bbox": 0.5012757915459799,
+      "hybrid_a": 0.5627036263330816,
+      "hard_fusion": 0.6009988626237528,
+      "continuous_fusion": 0.604249210980587
+    },
+    "warning": "Fusion hyperparameters were selected on this validation set; bootstrap does not remove selection optimism or prove transfer to unseen cameras."
+  },
+  "comparisons": [
+    {
+      "comparison_label": "continuous_fusion vs bbox",
+      "comparator": "bbox",
+      "proposed": "continuous_fusion",
+      "comparator_map": 0.5012757915459799,
+      "proposed_map": 0.604249210980587,
+      "delta_absolute": 0.10297341943460714,
+      "delta_percentage_points": 10.297341943460713,
+      "relative_improvement_percent": 20.54226858173777,
+      "ci_lower_absolute": 0.09876192148285604,
+      "ci_upper_absolute": 0.10563860853807773,
+      "ci_lower_percentage_points": 9.876192148285604,
+      "ci_upper_percentage_points": 10.563860853807773,
+      "bootstrap_mean_absolute": 0.10229137409586793,
+      "bootstrap_sd_absolute": 0.001742949233939314,
+      "proportion_positive": 1.0,
+      "ci_includes_zero": false,
+      "interval_conclusion": "percentile_CI_above_zero",
+      "n_iterations": 1000,
+      "sampling_strategy": "image_exploratory",
+      "n_sampling_groups": 6777
+    },
+    {
+      "comparison_label": "continuous_fusion vs hybrid_a",
+      "comparator": "hybrid_a",
+      "proposed": "continuous_fusion",
+      "comparator_map": 0.5627036263330816,
+      "proposed_map": 0.604249210980587,
+      "delta_absolute": 0.04154558464750546,
+      "delta_percentage_points": 4.154558464750546,
+      "relative_improvement_percent": 7.383208975965148,
+      "ci_lower_absolute": 0.03955423772035417,
+      "ci_upper_absolute": 0.04327316859282096,
+      "ci_lower_percentage_points": 3.955423772035417,
+      "ci_upper_percentage_points": 4.327316859282096,
+      "bootstrap_mean_absolute": 0.04129273342092479,
+      "bootstrap_sd_absolute": 0.0009389267441002879,
+      "proportion_positive": 1.0,
+      "ci_includes_zero": false,
+      "interval_conclusion": "percentile_CI_above_zero",
+      "n_iterations": 1000,
+      "sampling_strategy": "image_exploratory",
+      "n_sampling_groups": 6777
+    },
+    {
+      "comparison_label": "continuous_fusion vs hard_fusion",
+      "comparator": "hard_fusion",
+      "proposed": "continuous_fusion",
+      "comparator_map": 0.6009988626237528,
+      "proposed_map": 0.604249210980587,
+      "delta_absolute": 0.003250348356834243,
+      "delta_percentage_points": 0.3250348356834243,
+      "relative_improvement_percent": 0.5408243773780782,
+      "ci_lower_absolute": 0.00235361728097227,
+      "ci_upper_absolute": 0.005145645815266778,
+      "ci_lower_percentage_points": 0.235361728097227,
+      "ci_upper_percentage_points": 0.5145645815266777,
+      "bootstrap_mean_absolute": 0.00348660409031437,
+      "bootstrap_sd_absolute": 0.0006839761669161159,
+      "proportion_positive": 1.0,
+      "ci_includes_zero": false,
+      "interval_conclusion": "percentile_CI_above_zero",
+      "n_iterations": 1000,
+      "sampling_strategy": "image_exploratory",
+      "n_sampling_groups": 6777
+    }
+  ],
+  "bootstrap_method_distributions": {
+    "bbox": {
+      "mean_map": 0.5021873757389548,
+      "sd_map": 0.0023912335745484075
+    },
+    "hybrid_a": {
+      "mean_map": 0.563186016413898,
+      "sd_map": 0.0020415137725336594
+    },
+    "hard_fusion": {
+      "mean_map": 0.6009921457445082,
+      "sd_map": 0.002043079873927517
+    },
+    "continuous_fusion": {
+      "mean_map": 0.6044787498348226,
+      "sd_map": 0.002045206754245582
+    }
+  },
+  "academic_interpretation": "Paired bootstrap statistical interpretation \u2014 SynLoc validation\n\nWe evaluated 6,777 images using 1,000 paired bootstrap resamples (random seed 42). Resampling was performed at the image level (6,777 sampling units). For each resample, dataset-level mAP-LocSim was recomputed with the official LocSimCOCOeval matching and accumulation rules. Both methods in each comparison used the identical resampled units.\n\ncontinuous_fusion vs bbox: original mAP-LocSim was 0.501276 versus 0.604249, a difference of +0.102973 (+10.297 percentage points; +20.54% relative). Bootstrap mean difference was +0.102291 (SD 0.001743); the 95% percentile CI was [+0.098762, +0.105639], with positive differences in 100.0% of resamples. The 95% percentile interval excludes zero in the positive direction under the stated resampling assumptions.\n\ncontinuous_fusion vs hybrid_a: original mAP-LocSim was 0.562704 versus 0.604249, a difference of +0.041546 (+4.155 percentage points; +7.38% relative). Bootstrap mean difference was +0.041293 (SD 0.000939); the 95% percentile CI was [+0.039554, +0.043273], with positive differences in 100.0% of resamples. The 95% percentile interval excludes zero in the positive direction under the stated resampling assumptions.\n\ncontinuous_fusion vs hard_fusion: original mAP-LocSim was 0.600999 versus 0.604249, a difference of +0.003250 (+0.325 percentage points; +0.54% relative). Bootstrap mean difference was +0.003487 (SD 0.000684); the 95% percentile CI was [+0.002354, +0.005146], with positive differences in 100.0% of resamples. The 95% percentile interval excludes zero in the positive direction under the stated resampling assumptions.\n\nLimitations:\n\nThe hyperparameters for the fusion rules were selected using this same validation set. The paired bootstrap quantifies uncertainty conditional on that selection and does not correct for model-selection optimism or establish out-of-sample generalization.\n\nImage-level resampling is exploratory because images from the same sequence or camera may be statistically dependent; reported confidence intervals could be too narrow.\n\nNeither a narrow confidence interval nor an above-zero bootstrap proportion proves transfer to unseen matches, camera configurations, or data domains. The proportion of positive resamples is not interpreted as a formal p-value.\n\nThe fixed detection score threshold is retained from the experiments; mAP-LocSim is computed over the precision-recall curve rather than simply averaging detections above that threshold.\n"
+}

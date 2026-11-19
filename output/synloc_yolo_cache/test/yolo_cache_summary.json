@@ -1,0 +1,58 @@
+{
+  "split": "test",
+  "dataset_root": "data/spiideo",
+  "image_directory": "data/spiideo/images/test",
+  "annotation_file": "data/spiideo/annotations/test.json",
+  "yolo_model": "models/yolo26n_fullhd/yolo26n_fullhd-2/weights/best.pt",
+  "yolo_model_fingerprint": {
+    "argument": "models/yolo26n_fullhd/yolo26n_fullhd-2/weights/best.pt",
+    "resolved_path": "models/yolo26n_fullhd/yolo26n_fullhd-2/weights/best.pt",
+    "sha256": "552c97cf2a664cb8eae0a67c8cc39868b54a73b75dbdf35d2655e1fcd63c97dd",
+    "size_bytes": 5460997
+  },
+  "imgsz": 1280,
+  "conf": 0.05,
+  "iou": 0.7,
+  "max_det": 300,
+  "image_count": 9309,
+  "processed_this_run": 9309,
+  "skipped_existing": 0,
+  "total_cached_detections": 209054,
+  "cache_contract": {
+    "canonical_source": "All downstream bbox, pose, and SAM experiments must use these exact bboxes and scores.",
+    "arrays": [
+      "image_id",
+      "file_name",
+      "actual_width",
+      "actual_height",
+      "annotation_width",
+      "annotation_height",
+      "bboxes",
+      "detection_scores"
+    ],
+    "coordinates": "actual image pixel coordinates"
+  },
+  "standard_bbox_detection": {
+    "bbox_mAP_50_95": 0.7142691355591211,
+    "bbox_AP50": 0.9531123312043494,
+    "bbox_AP75": 0.7933876214831954,
+    "bbox_AR_max100": 0.7485502551227018
+  },
+  "bbox_bottom_center_locsim": {
+    "mAP_LocSim_50_95": 0.457028585879579,
+    "score_threshold": 0.4124763756990433,
+    "frame_accuracy_LocSim_50": 0.1485659039639059,
+    "precision_LocSim_50": 0.8502213878360667,
+    "recall_LocSim_50": 0.81,
+    "f1_LocSim_50": 0.82962348177533
+  },
+  "bbox_bottom_center_0_25m": {
+    "distance_threshold_m": 0.25,
+    "detected": 69684,
+    "missed": 78480,
+    "extra": 73825,
+    "precision": 0.4855723334425019,
+    "recall": 0.47031667611565564,
+    "mean_matched_localization_error_m": 0.16252806447059967
+  }
+}

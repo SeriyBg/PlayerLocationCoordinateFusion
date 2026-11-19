@@ -1,0 +1,27 @@
+{
+  "method": "sam",
+  "split": "val",
+  "score_threshold": 0.4302865565,
+  "match_iou": 0.5,
+  "source_image_pixel_space": true,
+  "output_csv": "output/synloc_bbox_size_analysis/val/sam_hybrid_a_band0.05_p98/sam_predictions_by_bbox_size.csv",
+  "image_files": 6777,
+  "counts": {
+    "matched": 101803,
+    "sam_x_bbox_y": 104561,
+    "unmatched_bbox_iou": 2762,
+    "bbox_fallback_invalid_sam": 4
+  },
+  "notes": [
+    "Each row is one frozen YOLO detection ABOVE the selected confidence threshold.",
+    "Hungarian bbox-IoU matching is independent of predicted ground position.",
+    "prediction_error_m compares predicted pitch point against annotated position_on_pitch.",
+    "raw_* columns describe pelvis-X+bbox-Y for pose, mask-X+mask-Y for SAM; pose_feet_* columns measure pose-estimated feet independent of the hybrid.",
+    "X/Y counterfactual displacements are computed relative to the CAMERA-PROJECTED GT image contact point, not annotated pitch GT; gt_projection_disagreement_m reports their mismatch.",
+    "This is a per-detection diagnostic, not official mAP-LocSim or 0.25m pitch-distance assignment precision/recall."
+  ],
+  "bottom_band_frac": 0.05,
+  "bottom_y_percentile": 98.0,
+  "primary_prediction": "SAM bottom-band median X + bbox-bottom Y",
+  "raw_prediction": "SAM bottom-band median X + SAM mask 98th-percentile Y"
+}

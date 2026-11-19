@@ -1,0 +1,17 @@
+synloc_runpod/
+output/**.jpg
+models/synloc/yolo26n_fullhd/weights/last.pt
+models/.cache
+.idea/
+.DS_Store
+runs/
+yolo26n.pt
+/models/yolo26n_fullhd/**/train_batch*.jpg
+/models/yolo26n_fullhd/**/val_batch*_labels.jpg
+/models/yolo26n_fullhd/**/val_batch*_pred.jpg
+**sam3.pt
+**mobile_sam.pt
+**last.pt
+output/**/images/**
+output/figures/
+progress.json

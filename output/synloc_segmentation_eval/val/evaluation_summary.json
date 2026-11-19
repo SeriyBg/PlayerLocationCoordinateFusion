@@ -1,0 +1,48 @@
+{
+  "split": "val",
+  "yolo_model": "models/yolo26n_fullhd/yolo26n_fullhd-2/weights/best.pt",
+  "sam_model": "mobile_sam.pt",
+  "imgsz": 1280,
+  "inference_conf": 0.05,
+  "nms_iou": 0.7,
+  "bbox": {
+    "results_file": "output/synloc_segmentation_eval/val/yolo_bbox_results.json",
+    "locsim": {
+      "mAP_LocSim_50_95": 0.5012757915459799,
+      "precision_LocSim_50": 0.8791309906628957,
+      "recall_LocSim_50": 0.8300000000000001,
+      "f1_LocSim_50": 0.8538593311296679,
+      "score_threshold": 0.43028655648231506,
+      "frame_accuracy_LocSim_50": 0.19300575475874282
+    },
+    "baseline_style": {
+      "distance_threshold_m": 0.25,
+      "detected": 56941,
+      "missed": 52410,
+      "extra": 47624,
+      "precision": 0.5445512360732558,
+      "recall": 0.5207176889100237,
+      "mean_matched_localization_error_m": 0.16173491850560925
+    }
+  },
+  "sam": {
+    "results_file": "output/synloc_segmentation_eval/val/yolo_sam_results.json",
+    "locsim": {
+      "mAP_LocSim_50_95": 0.24586864035562672,
+      "precision_LocSim_50": 0.6220205888065706,
+      "recall_LocSim_50": 0.41000000000000003,
+      "f1_LocSim_50": 0.4942313054153484,
+      "score_threshold": 0.7804476320743561,
+      "frame_accuracy_LocSim_50": 0.0029511583296443853
+    },
+    "baseline_style": {
+      "distance_threshold_m": 0.25,
+      "detected": 28421,
+      "missed": 80930,
+      "extra": 46052,
+      "precision": 0.3816282411075155,
+      "recall": 0.25990617369754276,
+      "mean_matched_localization_error_m": 0.13537796221248746
+    }
+  }
+}

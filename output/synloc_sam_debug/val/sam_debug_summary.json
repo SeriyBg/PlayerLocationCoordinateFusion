@@ -1,0 +1,24 @@
+{
+  "split": "val",
+  "sam_method": "robust",
+  "minimum_detection_score": 0.43,
+  "bbox_gt_match_iou_threshold": 0.3,
+  "better_margin_m": 0.0,
+  "correct_threshold_m": 0.25,
+  "counts": {
+    "better": 38727,
+    "method_only_correct": 12726,
+    "both_correct": 26552,
+    "worse": 64127,
+    "bbox_only_correct": 31563,
+    "both_wrong": 32013,
+    "unmatched_detection": 1717,
+    "sam_unavailable": 2
+  },
+  "mean_bbox_error_m": 0.2942280606203292,
+  "mean_sam_error_m": 0.7137715960787341,
+  "mean_improvement_m_bbox_minus_sam": -0.4195412720938305,
+  "positive_improvement_means": "SAM is more accurate than bbox",
+  "csv": "output/synloc_sam_debug/val/sam_detection_debug.csv",
+  "images": "output/synloc_sam_debug/val/images"
+}

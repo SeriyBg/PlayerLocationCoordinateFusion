@@ -1,0 +1,30 @@
+{
+  "method": "pose",
+  "split": "val",
+  "score_threshold": 0.4302865565,
+  "match_iou": 0.5,
+  "source_image_pixel_space": true,
+  "output_csv": "output/synloc_bbox_size_analysis/val/halpe26_m_hybrid_3px/pose_predictions_by_bbox_size.csv",
+  "image_files": 6777,
+  "counts": {
+    "matched": 101803,
+    "bbox_pelvis_feet_disagree": 35285,
+    "pelvis_accepted": 27763,
+    "bbox_no_hips": 41266,
+    "unmatched_bbox_iou": 2762,
+    "bbox_no_feet": 251
+  },
+  "notes": [
+    "Each row is one frozen YOLO detection ABOVE the selected confidence threshold.",
+    "Hungarian bbox-IoU matching is independent of predicted ground position.",
+    "prediction_error_m compares predicted pitch point against annotated position_on_pitch.",
+    "raw_* columns describe pelvis-X+bbox-Y for pose, mask-X+mask-Y for SAM; pose_feet_* columns measure pose-estimated feet independent of the hybrid.",
+    "X/Y counterfactual displacements are computed relative to the CAMERA-PROJECTED GT image contact point, not annotated pitch GT; gt_projection_disagreement_m reports their mismatch.",
+    "This is a per-detection diagnostic, not official mAP-LocSim or 0.25m pitch-distance assignment precision/recall."
+  ],
+  "pose_model": "halpe26_m",
+  "keypoint_conf": 0.3,
+  "pelvis_feet_threshold_px": 3.0,
+  "primary_prediction": "pose pelvis X when pelvis–feet agreement passes threshold, otherwise bbox X; bbox-bottom Y",
+  "raw_prediction": "pose pelvis X + bbox-bottom Y"
+}

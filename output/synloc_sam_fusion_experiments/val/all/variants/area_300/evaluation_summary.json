@@ -1,0 +1,61 @@
+{
+  "strategy": "area_x",
+  "split": "val",
+  "score_threshold": 0.4302865565,
+  "n_images": 6777,
+  "n_cached_detections": 141924,
+  "annotation_path": "data/spiideo/annotations/val.json",
+  "points_cache": "output/synloc_sam_size_adaptive_eval/val/band0.05_p98/extracted_sam_points.npz",
+  "reference_height_px": 70.0,
+  "soft_y_profile": "step70",
+  "soft_y_formula": "0 if h<70 else 1 (current reference model)",
+  "area_gate_source_px2": 300.0,
+  "comparison": {
+    "candidate": "area_300",
+    "strategy": "area_x",
+    "soft_y_profile": "step70",
+    "area_gate_source_px2": 300.0,
+    "mAP_LocSim_50_95": 0.5777952527056377,
+    "delta_mAP_vs_bbox": 0.0765194611596578,
+    "delta_mAP_vs_hybrid_a": 0.015091626372556122,
+    "delta_mAP_vs_adaptive_70px": 0.003803399464874957,
+    "frame_accuracy_LocSim_50": 0.19890807141803157,
+    "precision_0_25m": 0.6158657294505809,
+    "recall_0_25m": 0.5889109381715759,
+    "detected_0_25m": 64398,
+    "mean_matched_error_m_0_25m": 0.1457849565902689,
+    "n_source_bbox_fallback": 9,
+    "n_source_bbox_center_x": 29826,
+    "n_source_sam_x": 112089
+  },
+  "method": {
+    "locsim": {
+      "mAP_LocSim_50_95": 0.5777952527056377,
+      "score_threshold": 0.4302865565,
+      "frame_accuracy_LocSim_50": 0.19890807141803157
+    },
+    "baseline_style": {
+      "distance_threshold_m": 0.25,
+      "detected": 64398,
+      "missed": 44953,
+      "extra": 40167,
+      "precision": 0.6158657294505809,
+      "recall": 0.5889109381715759,
+      "mean_matched_localization_error_m": 0.1457849565902689
+    }
+  },
+  "ground_point_sources_all_cached_detections": {
+    "sam_x_alpha_0.000": 102559,
+    "bbox_center_x_alpha_0.000": 29823,
+    "sam_x_alpha_1.000": 9530,
+    "bbox_fallback": 9,
+    "bbox_center_x_alpha_1.000": 3
+  },
+  "delta_vs_adaptive_70px": {
+    "mAP_LocSim_50_95": 0.003803399464874957,
+    "frame_accuracy_LocSim_50": 0.004426737494466565,
+    "precision_0_25m": 0.005814565103045899,
+    "recall_0_25m": 0.005560077182650391,
+    "detected_0_25m": 608
+  }
+}

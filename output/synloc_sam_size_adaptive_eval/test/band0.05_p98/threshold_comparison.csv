@@ -1,0 +1,2 @@
+height_threshold_px,mAP_LocSim_50_95,delta_mAP_vs_bbox,delta_mAP_vs_hybrid_a,frame_accuracy_LocSim_50,precision_0_25m,recall_0_25m,detected_0_25m,mean_matched_error_m_0_25m,n_sam_x_sam_y,n_sam_x_bbox_y,n_bbox_fallback
+70.0,0.5539589296717414,0.09693034379216242,0.016236948005298513,0.1661832635084327,0.5789196625349187,0.5566871844712615,82481,0.14534525876419843,14898,194144,12

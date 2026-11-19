@@ -1,0 +1,61 @@
+{
+  "strategy": "area_x",
+  "split": "val",
+  "score_threshold": 0.4302865565,
+  "n_images": 6777,
+  "n_cached_detections": 141924,
+  "annotation_path": "data/spiideo/annotations/val.json",
+  "points_cache": "output/synloc_sam_size_adaptive_eval/val/band0.05_p98/extracted_sam_points.npz",
+  "reference_height_px": 70.0,
+  "soft_y_profile": "step70",
+  "soft_y_formula": "0 if h<70 else 1 (current reference model)",
+  "area_gate_source_px2": 350.0,
+  "comparison": {
+    "candidate": "area_350",
+    "strategy": "area_x",
+    "soft_y_profile": "step70",
+    "area_gate_source_px2": 350.0,
+    "mAP_LocSim_50_95": 0.5789604415759945,
+    "delta_mAP_vs_bbox": 0.07768465003001457,
+    "delta_mAP_vs_hybrid_a": 0.016256815242912892,
+    "delta_mAP_vs_adaptive_70px": 0.004968588335231727,
+    "frame_accuracy_LocSim_50": 0.19949830308396047,
+    "precision_0_25m": 0.6181131353703438,
+    "recall_0_25m": 0.5910599811615806,
+    "detected_0_25m": 64633,
+    "mean_matched_error_m_0_25m": 0.14633732535505004,
+    "n_source_bbox_fallback": 9,
+    "n_source_bbox_center_x": 41670,
+    "n_source_sam_x": 100245
+  },
+  "method": {
+    "locsim": {
+      "mAP_LocSim_50_95": 0.5789604415759945,
+      "score_threshold": 0.4302865565,
+      "frame_accuracy_LocSim_50": 0.19949830308396047
+    },
+    "baseline_style": {
+      "distance_threshold_m": 0.25,
+      "detected": 64633,
+      "missed": 44718,
+      "extra": 39932,
+      "precision": 0.6181131353703438,
+      "recall": 0.5910599811615806,
+      "mean_matched_localization_error_m": 0.14633732535505004
+    }
+  },
+  "ground_point_sources_all_cached_detections": {
+    "sam_x_alpha_0.000": 90721,
+    "bbox_center_x_alpha_0.000": 41661,
+    "sam_x_alpha_1.000": 9524,
+    "bbox_fallback": 9,
+    "bbox_center_x_alpha_1.000": 9
+  },
+  "delta_vs_adaptive_70px": {
+    "mAP_LocSim_50_95": 0.004968588335231727,
+    "frame_accuracy_LocSim_50": 0.005016969160395457,
+    "precision_0_25m": 0.008061971022808812,
+    "recall_0_25m": 0.007709120172655126,
+    "detected_0_25m": 843
+  }
+}

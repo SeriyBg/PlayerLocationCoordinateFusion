@@ -1,0 +1,19 @@
+Paired bootstrap statistical interpretation — SynLoc validation
+
+We evaluated 6,777 images using 1,000 paired bootstrap resamples (random seed 42). Resampling was performed at the image level (6,777 sampling units). For each resample, dataset-level mAP-LocSim was recomputed with the official LocSimCOCOeval matching and accumulation rules. Both methods in each comparison used the identical resampled units.
+
+continuous_fusion vs bbox: original mAP-LocSim was 0.501276 versus 0.604249, a difference of +0.102973 (+10.297 percentage points; +20.54% relative). Bootstrap mean difference was +0.102291 (SD 0.001743); the 95% percentile CI was [+0.098762, +0.105639], with positive differences in 100.0% of resamples. The 95% percentile interval excludes zero in the positive direction under the stated resampling assumptions.
+
+continuous_fusion vs hybrid_a: original mAP-LocSim was 0.562704 versus 0.604249, a difference of +0.041546 (+4.155 percentage points; +7.38% relative). Bootstrap mean difference was +0.041293 (SD 0.000939); the 95% percentile CI was [+0.039554, +0.043273], with positive differences in 100.0% of resamples. The 95% percentile interval excludes zero in the positive direction under the stated resampling assumptions.
+
+continuous_fusion vs hard_fusion: original mAP-LocSim was 0.600999 versus 0.604249, a difference of +0.003250 (+0.325 percentage points; +0.54% relative). Bootstrap mean difference was +0.003487 (SD 0.000684); the 95% percentile CI was [+0.002354, +0.005146], with positive differences in 100.0% of resamples. The 95% percentile interval excludes zero in the positive direction under the stated resampling assumptions.
+
+Limitations:
+
+The hyperparameters for the fusion rules were selected using this same validation set. The paired bootstrap quantifies uncertainty conditional on that selection and does not correct for model-selection optimism or establish out-of-sample generalization.
+
+Image-level resampling is exploratory because images from the same sequence or camera may be statistically dependent; reported confidence intervals could be too narrow.
+
+Neither a narrow confidence interval nor an above-zero bootstrap proportion proves transfer to unseen matches, camera configurations, or data domains. The proportion of positive resamples is not interpreted as a formal p-value.
+
+The fixed detection score threshold is retained from the experiments; mAP-LocSim is computed over the precision-recall curve rather than simply averaging detections above that threshold.

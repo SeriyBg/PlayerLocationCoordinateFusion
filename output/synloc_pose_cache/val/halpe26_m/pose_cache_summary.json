@@ -1,0 +1,37 @@
+{
+  "split": "val",
+  "pose_model": "halpe26_m",
+  "pose_title": "RTMPose-M Body8-Halpe26",
+  "pose_schema": "halpe26",
+  "pose_input_size": [
+    192,
+    256
+  ],
+  "expected_keypoints": 26,
+  "canonical_yolo_cache_root": "output/synloc_yolo_cache",
+  "canonical_yolo_model": "models/yolo26n_fullhd/yolo26n_fullhd-2/weights/best.pt",
+  "canonical_yolo_settings": {
+    "imgsz": 1280,
+    "conf": 0.05,
+    "iou": 0.7,
+    "max_det": 300
+  },
+  "processed_this_run": 6777,
+  "skipped_existing": 0,
+  "total_frozen_yolo_detections": 141924,
+  "total_pose_records": 141924,
+  "alignment_guarantee": "bboxes and detection_scores are copied verbatim from the canonical YOLO cache; pose index i corresponds to canonical YOLO detection i.",
+  "cache_arrays": [
+    "image_id",
+    "file_name",
+    "actual_width",
+    "actual_height",
+    "annotation_width",
+    "annotation_height",
+    "bboxes",
+    "detection_scores",
+    "keypoints",
+    "keypoint_scores",
+    "source_yolo_cache"
+  ]
+}

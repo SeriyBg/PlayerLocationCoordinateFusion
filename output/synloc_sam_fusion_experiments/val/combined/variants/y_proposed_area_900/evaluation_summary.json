@@ -1,0 +1,69 @@
+{
+  "strategy": "combined",
+  "split": "val",
+  "score_threshold": 0.4302865565,
+  "n_images": 6777,
+  "n_cached_detections": 141924,
+  "annotation_path": "data/spiideo/annotations/val.json",
+  "points_cache": "output/synloc_sam_size_adaptive_eval/val/band0.05_p98/extracted_sam_points.npz",
+  "reference_height_px": 70.0,
+  "soft_y_profile": "proposed",
+  "soft_y_formula": "piecewise: h<40:0; 40-50:.2; 50-60:.4; 60-70:.6; 70-140:.8; >=140:1",
+  "area_gate_source_px2": 900.0,
+  "comparison": {
+    "candidate": "y_proposed_area_900",
+    "strategy": "combined",
+    "soft_y_profile": "proposed",
+    "area_gate_source_px2": 900.0,
+    "mAP_LocSim_50_95": 0.5813308623020625,
+    "delta_mAP_vs_bbox": 0.08005507075608265,
+    "delta_mAP_vs_hybrid_a": 0.01862723596898097,
+    "delta_mAP_vs_adaptive_70px": 0.007339009061299806,
+    "frame_accuracy_LocSim_50": 0.1990556293345138,
+    "precision_0_25m": 0.6127480514512504,
+    "recall_0_25m": 0.5859297125769312,
+    "detected_0_25m": 64072,
+    "mean_matched_error_m_0_25m": 0.14258784326075485,
+    "n_source_bbox_fallback": 9,
+    "n_source_bbox_center_x": 107495,
+    "n_source_sam_x": 34420
+  },
+  "method": {
+    "locsim": {
+      "mAP_LocSim_50_95": 0.5813308623020625,
+      "score_threshold": 0.4302865565,
+      "frame_accuracy_LocSim_50": 0.1990556293345138
+    },
+    "baseline_style": {
+      "distance_threshold_m": 0.25,
+      "detected": 64072,
+      "missed": 45279,
+      "extra": 40493,
+      "precision": 0.6127480514512504,
+      "recall": 0.5859297125769312,
+      "mean_matched_localization_error_m": 0.14258784326075485
+    }
+  },
+  "ground_point_sources_all_cached_detections": {
+    "sam_x_alpha_0.200": 7642,
+    "bbox_center_x_alpha_0.200": 13022,
+    "bbox_center_x_alpha_0.000": 92054,
+    "sam_x_alpha_0.800": 9162,
+    "sam_x_alpha_0.000": 2392,
+    "sam_x_alpha_0.400": 8691,
+    "sam_x_alpha_0.600": 6246,
+    "bbox_center_x_alpha_0.600": 203,
+    "bbox_center_x_alpha_0.400": 2132,
+    "sam_x_alpha_1.000": 287,
+    "bbox_center_x_alpha_0.800": 83,
+    "bbox_fallback": 9,
+    "bbox_center_x_alpha_1.000": 1
+  },
+  "delta_vs_adaptive_70px": {
+    "mAP_LocSim_50_95": 0.007339009061299806,
+    "frame_accuracy_LocSim_50": 0.004574295410948781,
+    "precision_0_25m": 0.0026968871037154063,
+    "recall_0_25m": 0.0025788515880056373,
+    "detected_0_25m": 282
+  }
+}
